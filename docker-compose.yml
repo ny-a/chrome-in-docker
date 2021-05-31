@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  chrome:
+    build: .
+    cap_add:
+      - SYS_ADMIN
+    network_mode: host
+    devices:
+      - /dev/snd
+    volumes:
+      - ${XAUTHORITY}:/home/user/.Xauthority
+    environment:
+      - DISPLAY
